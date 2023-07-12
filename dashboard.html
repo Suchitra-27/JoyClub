@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./dashboard/dashboard.min.css?sdffs=hkhk" />
+    <link rel="stylesheet" href="./stylesheet/loader.min.css?dfgfdg=lsdf3" />
+    <link rel="stylesheet" href="./stylesheet/modal.min.css?fdsdffh=lsdf3" />
+    <link rel="stylesheet" href="./stylesheet/global.min.css?fdfh=l3s" />
+    <link rel="stylesheet" href="./stylesheet/navbar.min.css?fdfh=l3s" />
+    <link rel="stylesheet" href="./stylesheet/search.min.css?fdfsdfh=l3s" />
+
+    <script>
+      const qurrey = new URLSearchParams(window.location.search);
+      const resturentid = qurrey.get("storeid");
+    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100&amp;family=Lobster&amp;family=Alfa+Slab+One&amp;family=Rubik:wght@300&amp;&amp;family=Righteous&amp;family=Playfair+Display&amp;family=Alfa+Slab+One&amp;family=Prompt:wght@100&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tilt+Warp&amp;display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tilt+Neon&amp;family=Tilt+Warp&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;700&amp;family=Mulish&amp;family=Poppins:wght@300&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v6.2.0/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"
+    />
+    <style>
+      
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="box">
+        <div class="navabar">
+          <div class="top-icon">
+            <div class="top-left">
+              <a href="./myTransaction.html">
+                <div class="prof">
+                  <i class="fa-regular fa-circle-user"></i>
+                </div>
+              </a>
+              <a href="./home.html"
+                ><img src="./assets/joyLogo.png" class="logo"
+              /></a>
+            </div>
+            <div class="city">Indore</div>
+          </div>
+        </div>
+        <div class="upperserach">
+          <div class="ser-cont">
+            <span class="icon"
+              ><i class="fa-solid fa-magnifying-glass"></i
+            ></span>
+            <input
+              class="search"
+              type="text"
+              autocomplete="disable"
+              oninput="handleOnsearch()"
+              placeholder="Search"
+            />
+            <!-- <span class="ser-loader" onclick="cancleSearch()"><i class="min-loader"></i></span> -->
+            <span class="ser-loader white-cross" onclick="cancleSearch()"
+              ><i class="fa-solid fa-xmark"></i
+            ></span>
+          </div>
+        </div>
+        <div class="subcategories">
+          <div class="subcategory" onclick="handleSubCatgload(3)">
+            <img
+              class="subcategory-img"
+              src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-04-10T12%3A11%3A31.708Z.jpg"
+              alt=""
+            />
+            <div class="subcategory-title">Top Picks</div>
+          </div>
+
+          <div class="subcategory" onclick="handleSubCatgload(5)">
+            <img
+              class="subcategory-img"
+              src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-04-22T04%3A53%3A23.558Z.jpg"
+              alt=""
+            />
+            <div class="subcategory-title">Family Dining</div>
+          </div>
+
+          <div class="subcategory" onclick="handleSubCatgload(6)">
+            <img
+              class="subcategory-img"
+              src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-04-22T04%3A47%3A55.008Z.jpg"
+              alt=""
+            />
+            <div class="subcategory-title">Cafe</div>
+          </div>
+
+          <div class="subcategory" onclick="handleSubCatgload(7)">
+            <img
+              class="subcategory-img"
+              src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-04-22T04%3A56%3A18.836Z.jpg"
+              alt=""
+            />
+            <div class="subcategory-title">Luxury Dining</div>
+          </div>
+
+          <div class="subcategory" onclick="handleSubCatgload(8)">
+            <img
+              class="subcategory-img"
+              src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-04-22T04%3A53%3A42.243Z.jpg"
+              alt=""
+            />
+            <div class="subcategory-title">Outdoor / Rooftop</div>
+          </div>
+
+          <div class="subcategory" onclick="handleSubCatgload(9)">
+            <img
+              class="subcategory-img"
+              src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-04-03T11%3A30%3A28.740Z.jpg"
+              alt=""
+            />
+            <div class="subcategory-title">Lunch</div>
+          </div>
+
+          <div class="subcategory" onclick="handleSubCatgload(10)">
+            <img
+              class="subcategory-img"
+              src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-04-03T12%3A20%3A34.199Z.jpg"
+              alt=""
+            />
+            <div class="subcategory-title">Breakfast</div>
+          </div>
+
+          <div class="subcategory" onclick="handleSubCatgload(11)">
+            <img
+              class="subcategory-img"
+              src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-04-10T12%3A12%3A13.161Z.jpg"
+              alt=""
+            />
+            <div class="subcategory-title">Main Cource</div>
+          </div>
+
+          <div class="subcategory" onclick="handleSubCatgload(16)">
+            <img
+              class="subcategory-img"
+              src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-04-10T12%3A12%3A38.530Z.jpg"
+              alt=""
+            />
+            <div class="subcategory-title">Starter</div>
+          </div>
+
+          <div class="subcategory" onclick="handleSubCatgload(17)">
+            <img
+              class="subcategory-img"
+              src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-04-03T12%3A24%3A27.342Z.jpg"
+              alt=""
+            />
+            <div class="subcategory-title">Soupe</div>
+          </div>
+
+          <div class="subcategory" onclick="handleSubCatgload(25)">
+            <img
+              class="subcategory-img"
+              src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-04-22T10%3A20%3A39.185Z.jpg"
+              alt=""
+            />
+            <div class="subcategory-title">Cloud Kitchen</div>
+          </div>
+
+          <div class="subcategory" onclick="handleSubCatgload(26)">
+            <img
+              class="subcategory-img"
+              src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-04-22T10%3A22%3A26.320Z.jpg"
+              alt=""
+            />
+            <div class="subcategory-title">Punjabi Food</div>
+          </div>
+
+          <div class="subcategory" onclick="handleSubCatgload(27)">
+            <img
+              class="subcategory-img"
+              src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-04-22T10%3A27%3A33.345Z.jpg"
+              alt=""
+            />
+            <div class="subcategory-title">South Indian Food</div>
+          </div>
+
+          <div class="subcategory" onclick="handleSubCatgload(41)">
+            <img
+              class="subcategory-img"
+              src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-06-26T09%3A19%3A46.684Z.jpg"
+              alt=""
+            />
+            <div class="subcategory-title">Drink Exchange</div>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <div class="img-comp">
+              <div class="over">
+                <div class="best-seller upper-icon">Chilli Chicken - ₹273</div>
+
+                <div class="fav upper-icon" id="f0" onclick="makefav(f0)">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+              </div>
+              <img
+                class="img"
+                src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8&amp;w=1000&amp;q=80"
+                alt=""
+                onclick='redirectStore("1")'
+              />
+              <div class="rele">
+                <div class="text-over-img">
+                  <div class="img-row">
+                    <div class="rest-name">Pizza Hut</div>
+                  </div>
+                  <div class="img-row">
+                    <div class="qusine">Serving food for 50+ Years</div>
+
+                    <div class="rat">4.0 <i class="fa-solid fa-star"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="details">
+              <div class="offer-cont">
+                <div class="offers">
+                  <div class="offer">
+                    <div class="dis" onclick="handleOpenDetails(1)">
+                      <img src="./assets/offericon.png" alt="" />
+                      1 Veg Pizza + Coldrinks
+                    </div>
+
+                    <div class="moreoff" onclick="viewmore(m0)">
+                      +3<i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                  </div>
+
+                  <div class="multiple hidden hide" id="m0">
+                    <div class="offer" onclick="handleOpenDetails(2)">
+                      <div class="dis">
+                        <img src="./assets/offericon.png" alt="" />
+                        2 Veg Pizza + 1 French Fries
+                      </div>
+                    </div>
+
+                    <div class="offer" onclick="handleOpenDetails(6)">
+                      <div class="dis">
+                        <img src="./assets/offericon.png" alt="" />
+                        test voucher
+                      </div>
+                    </div>
+
+                    <div class="offer" onclick="handleOpenDetails(21)">
+                      <div class="dis">
+                        <img src="./assets/offericon.png" alt="" />
+                        onEtime
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="detail-row">
+                <div class="time">
+                  <i class="fa fas fa-duotone fa-location-dot"></i> Palasia,
+                  Indore
+                </div>
+                <div class="price">₹273</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="img-comp">
+              <div class="over">
+                <div class="best-seller upper-icon">Chilli Chicken - ₹273</div>
+
+                <div class="fav upper-icon" id="f1" onclick="makefav(f1)">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+              </div>
+              <img
+                class="img"
+                src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8&amp;w=1000&amp;q=80"
+                alt=""
+                onclick='redirectStore("2")'
+              />
+              <div class="rele">
+                <div class="text-over-img">
+                  <div class="img-row">
+                    <div class="rest-name">Gurukripa</div>
+                  </div>
+                  <div class="img-row">
+                    <div class="qusine">Serving food for 50+ Years</div>
+
+                    <div class="rat">4.0 <i class="fa-solid fa-star"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="details">
+              <div class="offer-cont">
+                <div class="offers">
+                  <div class="offer">
+                    <div class="dis" onclick="handleOpenDetails(3)">
+                      <img src="./assets/offericon.png" alt="" />
+                      4 Lunch Buffet
+                    </div>
+
+                    <div class="moreoff" onclick="viewmore(m1)">
+                      +3<i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                  </div>
+
+                  <div class="multiple hidden hide" id="m1">
+                    <div class="offer" onclick="handleOpenDetails(12)">
+                      <div class="dis">
+                        <img src="./assets/offericon.png" alt="" />
+                        Flat 80% OFF
+                      </div>
+                    </div>
+
+                    <div class="offer" onclick="handleOpenDetails(22)">
+                      <div class="dis">
+                        <img src="./assets/offericon.png" alt="" />
+                        onEtime
+                      </div>
+                    </div>
+
+                    <div class="offer" onclick="handleOpenDetails(27)">
+                      <div class="dis">
+                        <img src="./assets/offericon.png" alt="" />
+                        Tuesday buy one get one free.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="detail-row">
+                <div class="time">
+                  <i class="fa fas fa-duotone fa-location-dot"></i> Palasia,
+                  Indore
+                </div>
+                <div class="price">₹273</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="img-comp">
+              <div class="over">
+                <div class="best-seller upper-icon">Chilli Chicken - ₹273</div>
+
+                <div class="fav upper-icon" id="f2" onclick="makefav(f2)">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+              </div>
+              <img
+                class="img"
+                src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-04-22T06%3A34%3A53.954Z.jpg"
+                alt=""
+                onclick='redirectStore("7")'
+              />
+              <div class="rele">
+                <div class="text-over-img">
+                  <div class="img-row">
+                    <div class="rest-name">jayaka cafe</div>
+                  </div>
+                  <div class="img-row">
+                    <div class="qusine">serve tasty foods and taste</div>
+
+                    <div class="rat">4.0 <i class="fa-solid fa-star"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="details">
+              <div class="offer-cont">
+                <div class="offers">
+                  <div class="offer">
+                    <div class="dis" onclick="handleOpenDetails(19)">
+                      <img src="./assets/offericon.png" alt="" />
+                      free pizza
+                    </div>
+
+                    <div class="moreoff" onclick="viewmore(m2)">
+                      +2<i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                  </div>
+
+                  <div class="multiple hidden hide" id="m2">
+                    <div class="offer" onclick="handleOpenDetails(23)">
+                      <div class="dis">
+                        <img src="./assets/offericon.png" alt="" />
+                        onEtime
+                      </div>
+                    </div>
+
+                    <div class="offer" onclick="handleOpenDetails(42)">
+                      <div class="dis">
+                        <img src="./assets/offericon.png" alt="" />
+                        B1G1 Cold Coffee
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="detail-row">
+                <div class="time">
+                  <i class="fa fas fa-duotone fa-location-dot"></i> piplihana
+                  square indore
+                </div>
+                <div class="price">₹273</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="img-comp">
+              <div class="over">
+                <div class="best-seller upper-icon">Chilli Chicken - ₹273</div>
+
+                <div class="fav upper-icon" id="f3" onclick="makefav(f3)">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+              </div>
+              <img
+                class="img"
+                src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-04-22T09%3A39%3A41.080Z.jpg"
+                alt=""
+                onclick='redirectStore("9")'
+              />
+              <div class="rele">
+                <div class="text-over-img">
+                  <div class="img-row">
+                    <div class="rest-name">Takeaway kitchen</div>
+                  </div>
+                  <div class="img-row">
+                    <div class="qusine">EAT BEST AND DRIVE SAFE</div>
+
+                    <div class="rat">4.0 <i class="fa-solid fa-star"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="details">
+              <div class="offer-cont">
+                <div class="offers">
+                  <div class="offer">
+                    <div class="dis" onclick="handleOpenDetails(24)">
+                      <img src="./assets/offericon.png" alt="" />
+                      Takeaway150
+                    </div>
+
+                    <div class="moreoff" onclick="viewmore(m3)">
+                      +2<i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                  </div>
+
+                  <div class="multiple hidden hide" id="m3">
+                    <div class="offer" onclick="handleOpenDetails(25)">
+                      <div class="dis">
+                        <img src="./assets/offericon.png" alt="" />
+                        FREEMEAL
+                      </div>
+                    </div>
+
+                    <div class="offer" onclick="handleOpenDetails(40)">
+                      <div class="dis">
+                        <img src="./assets/offericon.png" alt="" />
+                        First10
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="detail-row">
+                <div class="time">
+                  <i class="fa fas fa-duotone fa-location-dot"></i> INDORE
+                </div>
+                <div class="price">₹273</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="img-comp">
+              <div class="over">
+                <div class="best-seller upper-icon">Chilli Chicken - ₹273</div>
+
+                <div class="fav upper-icon" id="f4" onclick="makefav(f4)">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+              </div>
+              <img
+                class="img"
+                src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-06-26T09%3A17%3A19.337Z.jpg"
+                alt=""
+                onclick='redirectStore("20")'
+              />
+              <div class="rele">
+                <div class="text-over-img">
+                  <div class="img-row">
+                    <div class="rest-name">Drinks Exchange</div>
+                  </div>
+                  <div class="img-row">
+                    <div class="qusine">enjoy your drink</div>
+
+                    <div class="rat">4.0 <i class="fa-solid fa-star"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="details">
+              <div class="offer-cont">
+                <div class="offers">
+                  <div class="offer">
+                    <div class="dis" onclick="handleOpenDetails(44)">
+                      <img src="./assets/offericon.png" alt="" />
+                      Free Drink
+                    </div>
+
+                    <div class="moreoff" onclick="viewmore(m4)">
+                      +1<i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                  </div>
+
+                  <div class="multiple hidden hide" id="m4">
+                    <div class="offer" onclick="handleOpenDetails(45)">
+                      <div class="dis">
+                        <img src="./assets/offericon.png" alt="" />
+                        B1G1 Vodka Shots
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="detail-row">
+                <div class="time">
+                  <i class="fa fas fa-duotone fa-location-dot"></i> INDORE
+                </div>
+                <div class="price">₹273</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="img-comp">
+              <div class="over">
+                <div class="best-seller upper-icon">Chilli Chicken - ₹273</div>
+
+                <div class="fav upper-icon" id="f5" onclick="makefav(f5)">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+              </div>
+              <img
+                class="img"
+                src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-06-26T10%3A32%3A34.294Z.jpg"
+                alt=""
+                onclick='redirectStore("21")'
+              />
+              <div class="rele">
+                <div class="text-over-img">
+                  <div class="img-row">
+                    <div class="rest-name">Pizza Mania</div>
+                  </div>
+                  <div class="img-row">
+                    <div class="qusine">Enjoy Your Pizza</div>
+
+                    <div class="rat">4.0 <i class="fa-solid fa-star"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="details">
+              <div class="offer-cont">
+                <div class="offers">
+                  <div class="offer">
+                    <div class="dis" onclick="handleOpenDetails(46)">
+                      <img src="./assets/offericon.png" alt="" />
+                      Buy 1 Get 1
+                    </div>
+
+                    <div class="moreoff" onclick="viewmore(m5)">
+                      +1<i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                  </div>
+
+                  <div class="multiple hidden hide" id="m5">
+                    <div class="offer" onclick="handleOpenDetails(47)">
+                      <div class="dis">
+                        <img src="./assets/offericon.png" alt="" />
+                        Get Rainy Discount
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="detail-row">
+                <div class="time">
+                  <i class="fa fas fa-duotone fa-location-dot"></i> Indore
+                </div>
+                <div class="price">₹273</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="s-cards hide"></div>
+
+        <div class="footer">
+          <img src="./assets/footerbanner.png" class="footer" alt="" />
+        </div>
+      </div>
+      <div class="order-popup modal">
+        <div class="modal-container">
+          <div class="modal-content white">
+            <span class="close_continer"
+              ><span class="close" onclick="close()">
+                <p class="cross" onclick="close()">×</p>
+              </span></span
+            >
+            <div class="modal-header head-border">
+              <p>Offer Details</p>
+            </div>
+            <div class="modal-body">
+              <div class="cop-info">
+                <h3 class="cop-title">free pizza</h3>
+                <p class="cop-other"></p>
+                <p class="cop-other">Get Deal of ₹500 only at ₹300</p>
+                <p></p>
+                <div class="cop-valid">
+                  <div class="cop-date">Available Till :- 30th Apr 2023</div>
+                </div>
+                <div class="cop-valid">
+                  <div class="cop-date">Valid for 2 Couple</div>
+                </div>
+              </div>
+              <p class="cop-desc">Free pizza on buy any three pizza&nbsp;</p>
+
+              <form class="memberships">
+                <div class="m-option">
+                  <input
+                    class="m-radio"
+                    type="radio"
+                    id="m-1"
+                    name="plan"
+                    value="1"
+                    required=""
+                  />
+                  <label class="membership" for="m-1">
+                    <span class="m-title">Welcome offer </span>
+                    <span class="m-valid"> 1 mos </span>
+                    <span class="m-price">₹ 99</span>
+                  </label>
+                </div>
+                <div class="m-option">
+                  <input
+                    class="m-radio"
+                    type="radio"
+                    id="m-2"
+                    name="plan"
+                    value="2"
+                    required=""
+                  />
+                  <label class="membership" for="m-2">
+                    <span class="m-title">Summer Special </span>
+                    <span class="m-valid"> 3 mos </span>
+                    <span class="m-price">₹ 199</span>
+                  </label>
+                </div>
+                <div class="m-option">
+                  <input
+                    class="m-radio"
+                    type="radio"
+                    id="m-3"
+                    name="plan"
+                    value="3"
+                    required=""
+                  />
+                  <label class="membership" for="m-3">
+                    <span class="m-title">Too Much Saving </span>
+                    <span class="m-valid"> 12 mos </span>
+                    <span class="m-price">₹ 499</span>
+                  </label>
+                </div>
+                <div class="m-option">
+                  <input
+                    class="m-radio"
+                    type="radio"
+                    id="m-4"
+                    name="plan"
+                    value="4"
+                    required=""
+                  />
+                  <label class="membership" for="m-4">
+                    <span class="m-title">Elite Membership </span>
+                    <span class="m-valid"> Lifetime </span>
+                    <span class="m-price">₹ 999</span>
+                  </label>
+                </div>
+                <div class="member-cnt-btn">
+                  <button class="member-btn">Buy Membership</button>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer"></div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="order-popup modal">
+        <div class="modal-container">
+          <div class="modal-content white">
+            <span class="close_continer"
+              ><span class="close" onclick="close()">
+                <p class="cross" onclick="close()">×</p>
+              </span></span
+            >
+            <div class="modal-header head-border">
+              <p>Offer Details</p>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer"></div>
+          </div>
+        </div>
+      </div> -->
+      <div class="second-loader-screen">
+        <div class="loader second-loader"></div>
+      </div>
+      <script src="./js/utill.min.js?hfdfdf=fdgdfglsdfsdf4"></script>
+      <script src="./js/loader.min.js?dfgfdg=lsdf3"></script>
+      <script src="./js/modal.min.js?hffsdfsdf=dfgfdg"></script>
+      <script src="./dashboard/dashboard.min.js?sdfsdsdvdfsdf=dfgfdgf"></script>
+    </div>
+  </body>
+</html>

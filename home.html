@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <title>JoyClub</title>
+
+    <style>
+         /* Optional CSS styles for the image */
+         #whatsapp {
+            cursor: pointer;
+        }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-hide">
+      <div class="box">
+        <div class="banner">
+          <img src="assets/nologin (1) (1).png" class="banner" alt="" />
+        </div>
+        <div class="title-cont">
+            <div class="section-header">
+                <span class="horline">WHAT ARE YOU LOOKING FOR</span>
+            </div>
+        </div>
+        <div class="categories">
+            <div class="category" onclick="">
+                <img class="category-img"  id="whatsapp" src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-04-10T12%3A01%3A37.318Z.jpg" alt="WhatsApp Image" onclick="redirectToWhatsApp()">
+                <div class="category-title">Food & Drinks</div>
+            </div>
+            <div class="category" onclick="">
+                <img class="category-img" id="whatsapp" src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-04-21T13%3A01%3A51.404Z.jpg" alt="WhatsApp Image" onclick="redirectToWhatsApp()">
+                <div class="category-title">Nightclubs</div>
+            </div>
+            <div class="category" onclick="">
+                <img class="category-img" id="whatsapp" src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-04-21T13%3A03%3A10.316Z.jpg" alt="WhatsApp Image" onclick="redirectToWhatsApp()">
+                <div class="category-title">Staycations</div>
+            </div>
+            <div class="category" onclick="">
+                <img class="category-img" id="whatsapp" src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-04-21T13%3A01%3A31.666Z.jpg" alt="WhatsApp Image" onclick="redirectToWhatsApp()">
+                <div class="category-title">Beauty & Health</div>
+            </div>
+            <div class="category" onclick="">
+                <img class="category-img" id="whatsapp" src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-04-22T03%3A28%3A02.616Z.jpg" alt="WhatsApp Image" onclick="redirectToWhatsApp()">
+                <div class="category-title">Events</div>
+            </div>
+            <div class="category" onclick="">
+                <img class="category-img" id="whatsapp" src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-04-21T13%3A07%3A03.541Z.jpg" alt="WhatsApp Image" onclick="redirectToWhatsApp()">
+                <div class="category-title">Experience</div>
+            </div> 
+        </div>
+        <div class="title-cont">
+            <div class="section-header">
+                <span class="horline">TOP PICKS</span>
+            </div>
+        </div>
+        <div class="banner">
+            <img class="top-pick" src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-05-09T12%3A52%3A38.110Z.jpg">
+            <img class="top-pick" src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-05-09T12%3A56%3A43.646Z.jpg">
+            <img class="top-pick" src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-05-09T13%3A00%3A07.917Z.jpg">
+            <img class="top-pick" src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-05-09T13%3A00%3A29.996Z.jpg">
+            <img class="top-pick" src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-05-09T13%3A00%3A42.698Z.jpg">
+            <img class="top-pick" src="https://washops.s3.ap-south-1.amazonaws.com/imgfile2023-05-09T13%3A00%3A50.832Z.jpg">
+        </div>
+        <div class="banner">
+            <img src="assets/footerbanner (1).png" class="banner" alt="">
+        </div>
+        </div>
+      </div>
+      <div class="footer">
+        <button class="btn btn-success" onclick="redirectToWhatsApp()"> Continue With WhatsApp</button>
+
+      </div>
+
+  </body>
+  <script>
+    function redirectToWhatsApp() {
+    let waMessage = 'Join the JOY Club';
+    waMessage = encodeURIComponent(waMessage);
+
+    window.location.href = `https://wa.me/+919329143628?text=` + waMessage; ;  // WhatsApp link
+}
+</script>
+</html>
